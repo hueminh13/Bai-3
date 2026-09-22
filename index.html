@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example Cafe Menu</title>
+
+<style>
+* {box-sizing: border-box;}
+html,body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    font-family: "Times New Roman", Times, serif;
+    color: #000000;
+}
+.page {
+    position: relative;
+    width: 1242px;
+    height: 748px;
+    margin: 10px auto 0;
+    background: #ffffff;
+    border: 1px solid #d99a9a;
+    overflow: hidden;
+}
+.header {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+}
+.header h1 {
+    margin: 0;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 32px;
+    font-weight: bold;
+    font-style: italic;
+    color: #963636;
+    text-shadow: 3px 5px 0 #e5a0a0;
+    line-height: 1;
+}
+.nav {
+    width: 100%;
+    height: 37px;
+    background: #ed9292;
+    border-top: 1px solid #888888;
+    border-bottom: 1px solid #888888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.home {
+    width: 70px;
+    height: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #9b3b3b;
+    text-decoration: none;
+}
+.home img {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+}
+.nav-link {
+    height: 28px;
+    min-width: 132px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-right: 1px solid #9b3b3b;
+}
+.nav-link:hover {
+    text-decoration: underline;
+}
+.search {
+    margin-left: 47px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.search input {
+    width: 138px;
+    height: 18px;
+    padding: 1px 3px;
+    border: 1px solid #aaaaaa;
+    background: #ffffff;
+    outline: none;
+}
+.search button {
+    width: 28px;
+    height: 20px;
+    padding: 0;
+    border: 1px solid #999999;
+    background: #eeeeee;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12px;
+}
+.main {
+    width: 100%;
+    height: 578px;
+    display: grid;
+    grid-template-columns: 195px 1fr 310px;
+    background: #ffffff;
+}
+.left {
+    width: 195px;
+    padding: 7px 0 0 0;
+}
+.side-menu {
+    width: 188px;
+    margin: 0;
+    padding: 0;
+}
+.side-menu a {
+    display: block;
+    width: 188px;
+    height: 25px;
+    margin: 0 0 4px 0;
+    padding-left: 17px;
+    line-height: 25px;
+    color: #ffffff;
+    background: #e99292;
+    border-radius: 15px;
+    font-size: 13px;
+    text-decoration: none;
+}
+.side-menu a:hover {
+    text-decoration: underline;
+}
+.company-photo {
+    display: block;
+    width: 190px;
+    height: 137px;
+    margin: 13px 0 0 0;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 9px 9px 0 #f2aaaa;
+}
+.content {
+    position: relative;
+    height: 578px;
+    padding: 7px 10px 0 10px;
+    overflow: hidden;
+}
+.section-title {
+    width: 368px;
+    height: 30px;
+    margin-left: 174px;
+    margin-bottom: 3px;
+    background: #eb9292;
+    color: #963636;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 12px;
+    text-align: center;
+    line-height: 30px;
+}
+.info-title {
+    margin-top: 9px;
+    letter-spacing: 10px;
+}
+.menu-list {
+    width: 560px;
+    margin-top: 0;
+    margin-bottom: 1px;
+    padding-left: 29px;
+    font-size: 13px;
+    line-height: 15px;
+}
+.menu-list li {
+    padding: 0;
+}
+.menu-list a {
+    color: #a52d2d;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.back-top {
+    display: block;
+    width: max-content;
+    margin: 0 0 1px 0;
+    color: #a52d2d;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.form {
+    width: 690px;
+    margin: 10px auto 0;
+}
+.form-row {
+    display: flex;
+    gap: 23px;
+    margin-bottom: 23px;
+}
+.input {
+    width: 330px;
+    height: 41px;
+    padding: 6px;
+    border: 1px solid #aaaaaa;
+    background: #ffffff;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12px;
+    outline: none;
+}
+.country-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 27px;
+}
+.country {
+    width: 330px;
+    height: 41px;
+    padding: 5px;
+    border: 1px solid #aaaaaa;
+    background: #ffffff;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12px;
+}
+.gender {
+    margin-left: 22px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+.gender input {
+    margin: 0 2px 0 0;
+    vertical-align: middle;
+}
+.comment {
+    display: block;
+    width: 675px;
+    height: 58px;
+    padding: 5px;
+    border: 1px solid #aaaaaa;
+    background: #ffffff;
+    resize: both;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12px;
+    outline: none;
+}
+.buttons {
+    margin-top: 10px;
+}
+.buttons button {
+    height: 33px;
+    padding: 0 9px;
+    margin-right: 2px;
+    border: 1px solid #999999;
+    background: #eeeeee;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+.buttons button:hover {
+    background: #dddddd;
+}
+.events {
+    width: 310px;
+    height: 498px;
+    margin-top: 7px;
+    padding: 3px 30px 10px 30px;
+    background: #000000;
+    color: #ffffff;
+    overflow: hidden;
+}
+.events h2 {
+    margin: 0 0 15px 0;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+}
+.event {
+    margin: 0 0 27px 0;
+}
+.event h3 {
+    margin: 0 0 0 0;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.event img {
+    display: block;
+    width: 250px;
+    height: 141px;
+    margin: 0 auto 4px auto;
+    object-fit: cover;
+}
+.event p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 15px;
+}
+.event a {
+    color: #d9a3a3;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.more-content {
+    display: none;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 15px;
+}
+.footer {
+    width: 100%;
+    height: 66px;
+    margin: 0;
+    padding: 0;
+    background: #ed9292;
+    border-top: 1px solid #888888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-text {
+    color: #ffffff;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 27px;
+    font-weight: bold;
+    font-style: italic;
+    white-space: nowrap;
+}
+.gender input[type="radio"] {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    margin-right: 2px;
+    border: 1px solid #777777;
+    border-radius: 50%;
+    background: #ffffff;
+    vertical-align: -2px;
+    position: relative;
+}
+</style>
+</head>
+<body>
+<div class="page">
+    <header class="header">
+        <h1><em>EXAMPLE CAFE MENU</em></h1>
+    </header>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="home"><img src="icons8-home-50.png"></a>
+            <a href="#starter" class="nav-link">STARTER</a>
+            <a href="#main-courses" class="nav-link">MAIN COURSES</a>
+            <a href="#desserts" class="nav-link">DESSERTS</a>
+
+            <div class="search">
+                <input type="text">
+                <button>Go</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <aside class="left">
+            <div class="side-menu">
+                <a href="#">Cafe Latte</a>
+                <a href="#">Cappucino</a>
+                <a href="#">Ocean Blue</a>
+                <a href="#">Ice-cream Cafe</a>
+                <a href="#">Order Online</a>
+            </div>
+            <img scr="company.png" class="company-photo">
+        </aside>
+
+        <section class="content">
+            <div id="starter" class="section-title">Starter</div>
+            <ul class="menu-list">
+                <li>Chestnut and Mushroom Goujons
+                    <a href="#">(v)</a>
+                </li>
+                <li>Goat Cheese
+                    <a href="#">(v)</a>
+                </li>
+                <li>
+                    <span class="honey">HONEY SOY CHICKEN KEBABS</span>
+                    <a href="#">(v)</a>
+                </li>
+                <li>Seafood Salad
+                    <a href="#">(v)</a>
+                </li>
+            </ul>
+            <a href="#" class="back-top">Back to Top</a>
+            <div id="desserts" class="section-title">Desserts
+            </div>
+            <ul class="menu-list">
+                <li>Lemon Sorbet
+                    <a href="#">(v)</a>
+                </li>
+                <li>Chocolate Mud Pie
+                    <a href="#">(v)</a>
+                </li>
+                <li>Pecan Pie
+                    <a href="#">(v)</a>
+                </li>
+                <li>Selection of fine Cheeses from Around the World
+                    <a href="#">(v)</a>
+                </li>
+            </ul>
+            <a href="#" class="back-top">Back to Top</a>
+            <div class="section-title info-title">INFORMATION</div>
+
+            <form class="form">
+
+                <div class="form-row">
+
+                    <input
+                        class="input"
+                        type="text"
+                        placeholder="First Name"
+                    >
+
+                    <input
+                        class="input"
+                        type="text"
+                        placeholder="Last Name*"
+                    >
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <input
+                        class="input"
+                        type="email"
+                        placeholder="Email"
+                    >
+
+                    <input
+                        class="input"
+                        type="text"
+                        placeholder="Telephone"
+                    >
+
+                </div>
+
+                <div class="country-row">
+
+                    <select class="country">
+
+                        <option>
+                            USA
+                        </option>
+
+                    </select>
+
+
+                    <div class="gender">
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="person"
+                            >
+
+                            Vietnamese
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="person"
+                            >
+
+                            Foreigner
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- COMMENT -->
+
+                <textarea
+                    class="comment"
+                    placeholder="Comment"
+                ></textarea>
+
+
+
+                <!-- BUTTONS -->
+
+                <div class="buttons">
+
+                    <button type="submit">
+                        Submit
+                    </button>
+
+                    <button type="reset">
+                        Cancel
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+        </section>
+
+        <aside class="events">
+
+
+            <h2>
+                Events
+            </h2>
+
+            <div class="event">
+
+
+                <h3>
+                    Regular Meetings
+                </h3>
+
+
+                <img
+                    src="assets/meeting.png"
+                    alt="Regular Meetings"
+                >
+
+
+                <p>
+
+                    Host your regular team meetings or activities in
+                    the comfort of your own private room.
+
+                    <a
+                        href="javascript:void(0)"
+                        onclick="toggleMore('meeting-more')"
+                    >
+                        Read more...
+                    </a>
+
+                </p>
+
+
+                <div
+                    id="meeting-more"
+                    class="more-content"
+                >
+
+                    Our private room provides a comfortable
+                    space for regular meetings and activities.
+
+                </div>
+
+
+            </div>
+
+            <div class="event">
+
+
+                <h3>
+                    Product Launches
+                </h3>
+
+
+                <img src="launch.png">
+
+
+                <p>
+
+                    Launch your product with ease in a space that
+                    truly fits its image.
+
+                    <a
+                        href="javascript:void(0)"
+                        onclick="toggleMore('launch-more')"
+                    >
+                        Read more...
+                    </a>
+
+                </p>
+
+
+                <div
+                    id="launch-more"
+                    class="more-content"
+                >
+
+                    Our event space is designed for product
+                    launches and special events.
+
+                </div>
+
+
+            </div>
+
+
+        </aside>
+
+
+    </main>
+    <footer class="footer">
+
+        <div class="footer-text">
+
+            ABC Company © - 12345678 - abccoffee@gmail.com
+
+        </div>
+
+    </footer>
+
+
+</div>
+<script>
+
+function toggleMore(id) {
+
+    var content = document.getElementById(id);
+
+    if (content.style.display === "block") {
+
+        content.style.display = "none";
+
+    } else {
+
+        content.style.display = "block";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+</html>
