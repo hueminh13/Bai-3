@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Example Cafe Menu</title>
+<title>EXAMPLE CAFE MENU</title>
 
 <style>
 * {box-sizing: border-box;}
@@ -16,7 +16,7 @@ html,body {
 .page {
     position: relative;
     width: 1242px;
-    height: 748px;
+    height: 750px;
     margin: 10px auto 0;
     background: #ffffff;
     border: 1px solid #d99a9a;
@@ -33,11 +33,11 @@ html,body {
 .header h1 {
     margin: 0;
     font-family: "Times New Roman", Times, serif;
-    font-size: 32px;
+    font-size: 34px;
     font-weight: bold;
     font-style: italic;
     color: #963636;
-    text-shadow: 3px 5px 0 #e5a0a0;
+    text-shadow: 7px 7px 1px rgba(245, 174, 174, 0.85);
     line-height: 1;
 }
 .nav {
@@ -54,20 +54,21 @@ html,body {
     height: 100%;
     display: flex;
     align-items: center;
+    gap: 6px;
 }
 .home {
     width: 70px;
     height: 31px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-right: 1px solid #9b3b3b;
+    padding-left: 43px;
+    border-right: 1px solid #0000FF;
     text-decoration: none;
 }
 .home img {
-    width: 23px;
-    height: 23px;
+    width: 18px;
+    height: 20px;
     object-fit: contain;
+    top: 30px;
 }
 .nav-link {
     height: 28px;
@@ -79,7 +80,7 @@ html,body {
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
-    border-right: 1px solid #9b3b3b;
+    border-right: 1px solid #0000FF;
 }
 .nav-link:hover {
     text-decoration: underline;
@@ -88,10 +89,10 @@ html,body {
     margin-left: 47px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 3px;
 }
 .search input {
-    width: 138px;
+    width: 149px;
     height: 18px;
     padding: 1px 3px;
     border: 1px solid #aaaaaa;
@@ -100,7 +101,7 @@ html,body {
 }
 .search button {
     width: 28px;
-    height: 20px;
+    height: 18px;
     padding: 0;
     border: 1px solid #999999;
     background: #eeeeee;
@@ -112,7 +113,7 @@ html,body {
     height: 578px;
     display: grid;
     grid-template-columns: 195px 1fr 310px;
-    background: #ffffff;
+    background: #ffffff; 
 }
 .left {
     width: 195px;
@@ -139,14 +140,30 @@ html,body {
 .side-menu a:hover {
     text-decoration: underline;
 }
+.company-wrap {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 10px;
+    position: relative;
+    z-index: 20;
+}
 .company-photo {
-    display: block;
-    width: 190px;
-    height: 137px;
-    margin: 13px 0 0 0;
-    object-fit: cover;
+    width: 185px;
+    height: 120px;
+    background-image: url("./company.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     border-radius: 50%;
-    box-shadow: 9px 9px 0 #f2aaaa;
+    position: relative;
+    z-index: 30;
+    box-shadow:10px 13px 12px rgba(255, 155, 185, 0.80);
+    opacity: 1;
+    visibility: visible;
+    margin: 13px 0 0 0;
 }
 .content {
     position: relative;
@@ -155,17 +172,18 @@ html,body {
     overflow: hidden;
 }
 .section-title {
-    width: 368px;
+    width: 50%;
     height: 30px;
-    margin-left: 174px;
-    margin-bottom: 3px;
+    margin: 0 auto 2px auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 18px;
     background: #eb9292;
     color: #963636;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 27px;
+    font-size: 22px;
     font-weight: bold;
     letter-spacing: 12px;
-    text-align: center;
     line-height: 30px;
 }
 .info-title {
@@ -187,6 +205,11 @@ html,body {
     color: #a52d2d;
     font-weight: bold;
     text-decoration: underline;
+}
+.honey {
+    color: #c49a28;
+    font-weight: bold;
+    text-decoration: none;
 }
 .back-top {
     display: block;
@@ -242,7 +265,7 @@ html,body {
 .comment {
     display: block;
     width: 675px;
-    height: 58px;
+    height: 56px;
     padding: 5px;
     border: 1px solid #aaaaaa;
     background: #ffffff;
@@ -250,12 +273,13 @@ html,body {
     font-family: "Times New Roman", Times, serif;
     font-size: 12px;
     outline: none;
+    margin: 0 4px;
 }
 .buttons {
     margin-top: 10px;
 }
 .buttons button {
-    height: 33px;
+    height: 28px;
     padding: 0 9px;
     margin-right: 2px;
     border: 1px solid #999999;
@@ -269,38 +293,44 @@ html,body {
 }
 .events {
     width: 310px;
-    height: 498px;
+    height: 523px;
     margin-top: 7px;
-    padding: 3px 30px 10px 30px;
     background: #000000;
     color: #ffffff;
     overflow: hidden;
 }
 .events h2 {
-    margin: 0 0 15px 0;
+    margin: 0px 0 14px 0px;
     color: #ffffff;
     font-size: 25px;
     font-weight: bold;
+    line-height: 25px;
+    padding: 2px 0px 3px 0px;
 }
 .event {
-    margin: 0 0 27px 0;
+    width: 250px;
+    margin: 0 0 24px 0;
+    padding: 2px 30px 10px 30px;
 }
 .event h3 {
-    margin: 0 0 0 0;
+    margin: 0;
+    padding: 0;
     color: #ffffff;
     font-size: 20px;
-    font-weight: bold;
-    text-align: center;
+    line-height: 22px;
 }
 .event img {
     display: block;
-    width: 250px;
-    height: 141px;
-    margin: 0 auto 4px auto;
+    width: 248px;
+    height: 155px;
+    margin: 0 0 5px 0;
     object-fit: cover;
 }
 .event p {
     margin: 0;
+    padding: 0;
+    width: 250px;
+    max-width: 250px;
     color: #ffffff;
     font-size: 12px;
     line-height: 15px;
@@ -309,18 +339,21 @@ html,body {
     color: #d9a3a3;
     text-decoration: underline;
     cursor: pointer;
+    font-weight: 700;
 }
 .more-content {
     display: none;
     margin: 0;
     padding: 0;
+    width: 250px;
+    max-width: 250px;
     color: #ffffff;
     font-size: 12px;
     line-height: 15px;
 }
 .footer {
     width: 100%;
-    height: 66px;
+    height: 70px;
     margin: 0;
     padding: 0;
     background: #ed9292;
@@ -364,7 +397,7 @@ html,body {
 
             <div class="search">
                 <input type="text">
-                <button>Go</button>
+                <button type="button">Go</button>
             </div>
         </div>
     </nav>
@@ -378,6 +411,7 @@ html,body {
                 <a href="#">Ice-cream Cafe</a>
                 <a href="#">Order Online</a>
             </div>
+            <div class="company-row"></div>
             <img scr="company.png" class="company-photo">
         </aside>
 
@@ -417,238 +451,76 @@ html,body {
             </ul>
             <a href="#" class="back-top">Back to Top</a>
             <div class="section-title info-title">INFORMATION</div>
-
             <form class="form">
-
                 <div class="form-row">
-
-                    <input
-                        class="input"
-                        type="text"
-                        placeholder="First Name"
-                    >
-
-                    <input
-                        class="input"
-                        type="text"
-                        placeholder="Last Name*"
-                    >
-
+                    <input type="text" class="input" placeholder="First Name">
+                    <input type="text" class="input" placeholder="Last Name*">
                 </div>
-
-
                 <div class="form-row">
-
-                    <input
-                        class="input"
-                        type="email"
-                        placeholder="Email"
-                    >
-
-                    <input
-                        class="input"
-                        type="text"
-                        placeholder="Telephone"
-                    >
-
+                    <input type="email" class="input" placeholder="Email">
+                    <input type="text" class="input" placeholder="Telephone">
                 </div>
-
                 <div class="country-row">
-
                     <select class="country">
-
-                        <option>
-                            USA
-                        </option>
-
+                        <option>USA</option>
                     </select>
-
-
                     <div class="gender">
-
                         <label>
-
-                            <input
-                                type="radio"
-                                name="person"
-                            >
-
-                            Vietnamese
-
-                        </label>
-
-
+                            <input type="radio" name="person"> Vietnamese</label>
                         <label>
-
-                            <input
-                                type="radio"
-                                name="person"
-                            >
-
-                            Foreigner
-
+                            <input type="radio" name="person">Foreigner
                         </label>
-
                     </div>
-
                 </div>
-
-
-
-                <!-- COMMENT -->
-
-                <textarea
-                    class="comment"
-                    placeholder="Comment"
-                ></textarea>
-
-
-
-                <!-- BUTTONS -->
-
+                <textarea class="comment">Comment</textarea>
                 <div class="buttons">
-
-                    <button type="submit">
-                        Submit
-                    </button>
-
-                    <button type="reset">
-                        Cancel
-                    </button>
-
+                    <button type="submit">Submit</button>
+                    <button type="reset">Cacel</button>
                 </div>
-
-
             </form>
-
-
         </section>
-
         <aside class="events">
-
-
-            <h2>
-                Events
-            </h2>
-
+            <h2>Events</h2>
             <div class="event">
-
-
-                <h3>
-                    Regular Meetings
-                </h3>
-
-
-                <img
-                    src="assets/meeting.png"
-                    alt="Regular Meetings"
-                >
-
-
-                <p>
-
-                    Host your regular team meetings or activities in
+                <h3>Regular Meetings</h3>
+                <img src="meeting.png">
+                <p>Host your regular team meetings or activities in
                     the comfort of your own private room.
-
-                    <a
-                        href="javascript:void(0)"
-                        onclick="toggleMore('meeting-more')"
-                    >
-                        Read more...
-                    </a>
-
+                    <a href="javascript:void(0)" onclick="toggleMore('meeting-more')">Read more...</a>
                 </p>
-
-
-                <div
-                    id="meeting-more"
-                    class="more-content"
-                >
-
-                    Our private room provides a comfortable
-                    space for regular meetings and activities.
-
+                <div id="meeting-more" class="more-content">
+                    Charge up on Kith's aromatic coffee and delectable dishes for that extra boost in your work! 
                 </div>
-
-
             </div>
-
             <div class="event">
-
-
-                <h3>
-                    Product Launches
-                </h3>
-
-
+                <h3>Product Launches</h3>
                 <img src="launch.png">
-
-
-                <p>
-
-                    Launch your product with ease in a space that
+                <p>Launch your product with ease in a space that
                     truly fits its image.
-
-                    <a
-                        href="javascript:void(0)"
-                        onclick="toggleMore('launch-more')"
-                    >
-                        Read more...
-                    </a>
-
+                    <a href="javascript:void(0)" onclick="toggleMore('launch-more')">Read more...</a>
                 </p>
-
-
-                <div
-                    id="launch-more"
-                    class="more-content"
-                >
-
-                    Our event space is designed for product
-                    launches and special events.
-
+                <div id="launch-more" class="more-content">
+                    Create an unforgettable experience for your guests with our spacious outlets! Whether you want to host an intimate celebration or launch an event for hundreds of guests, Kith's space is customisable to your needs.
                 </div>
-
-
             </div>
-
-
         </aside>
-
-
     </main>
     <footer class="footer">
-
         <div class="footer-text">
-
-            ABC Company © - 12345678 - abccoffee@gmail.com
-
+            ABC Company<sup>&copy;</sup> - 12345678 - abccoffee@gmail.com
         </div>
-
     </footer>
-
-
 </div>
 <script>
-
 function toggleMore(id) {
-
     var content = document.getElementById(id);
-
     if (content.style.display === "block") {
-
         content.style.display = "none";
-
-    } else {
-
+    } 
+    else {
         content.style.display = "block";
-
     }
-
 }
-
 </script>
-
-
 </body>
 </html>
